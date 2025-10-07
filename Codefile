@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SWEED Trust — Empowering Rural Tamil Nadu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SWEED Trust — Professional NGO in Tamil Nadu, empowering rural lives through sustainable agriculture, watershed, dairy, skill and women empowerment programs.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600,700|Open+Sans:400,600&display=swap">
+    <style>
+        :root {
+            --primary: #2F855A;
+            --secondary: #EDF2F7;
+            --accent: #38B2AC;
+            --cta: #FBC02D;
+            --text-primary: #1A202C;
+            --text-secondary: #4A5568;
+            --bg: #FFFFFF;
+            --success: #59B465;
+            --danger: #E53E3E;
+            --tab-bg: #f7fafc;
+        }
+        html, body {margin:0; padding:0; font-family:'Open Sans', Arial, sans-serif; background:var(--secondary);}
+        body {color:var(--text-primary);}
+        header {background:var(--primary);}
+        nav {display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3vw;}
+        .logo-area {display:flex;align-items:center;gap:1rem;}
+        .logo-img {width:54px; height:54px; border-radius:50%; background:#fff; box-shadow:0 2px 8px rgba(47,133,90,.10);}
+        .site-title {font-family:'Poppins';font-weight:700;font-size:2.1rem;letter-spacing:0.03em;color:#fff;}
+        .nav-links {display:flex;gap:2.2rem;}
+        .nav-links a {color:#fff;text-decoration:none;font-weight:600;padding:6px 15px;border-radius:22px;transition:background .2s;}
+        .nav-links a.active, .nav-links a:hover {background:var(--accent);color:var(--primary);}
+        .cta-btn {background:var(--cta);color:var(--primary);font-weight:700;border:none;border-radius:30px;padding:10px 30px;margin-left:1rem;cursor:pointer;box-shadow:0 2px 8px rgba(38,178,172,.12);}
+        .trust-banner {background:var(--accent);color:var(--primary);font-weight:700;text-align:center;padding:.5rem 0;}
+        .hero {background:linear-gradient(110deg, var(--primary) 68%, var(--accent) 100%);color:#fff;text-align:center;padding:4.5rem 2vw 3rem 2vw;}
+        .hero-content {max-width:700px;margin:0 auto;}
+        .hero-content h1 {font-family:'Poppins';font-size:3.1rem;margin-bottom:1rem;line-height:1.1;}
+        .hero-content p {font-size:1.23rem;margin-bottom:2rem;}
+        .hero-btns {display:flex;justify-content:center;gap:1.2rem;}
+        .hero-btns a, .hero-btns button {padding:12px 32px;border-radius:28px;font-family:'Poppins';font-weight:600;text-decoration:none;font-size:1rem;transition:all .2s;}
+        .hero-btns a.cta, .hero-btns button.cta {background:var(--cta);color:var(--primary);}
+        .hero-btns a.secondary, .hero-btns button.secondary {background:transparent;color:#fff;border:2px solid #fff;}
+        .hero-btns a.secondary:hover, .hero-btns button.secondary:hover {background:#fff;color:var(--primary);}
+        .stats {display:flex;justify-content:center;gap:2.5rem;margin:3.5rem 0 2rem 0;}
+        .stat-block {background:#fff;border-radius:16px;box-shadow:0 2px 18px rgba(47,133,90,.08);padding:2rem 2.3rem;min-width:170px;text-align:center;}
+        .stat-block .stat-num {font-family:'Poppins';font-size:2.5rem;color:var(--primary);font-weight:700;}
+        .stat-block .stat-label {color:var(--text-secondary);margin-top:.4rem;font-size:1.08rem;}
+        .partners-strip {display:flex;gap:2.2rem;justify-content:center;align-items:center;margin:2rem 0 1.5rem 0;}
+        .partner-logo {width:78px;filter:grayscale(1) contrast(1.1);}
+        main {max-width:1200px;margin:0 auto;padding:0 2vw;}
+        section {margin-bottom:3.2rem;}
+        .section-title {font-family:'Poppins';font-size:2.1rem;color:var(--primary);margin-bottom:.8rem;}
+        /* About Tabs */
+        .tabs {background:var(--tab-bg);border-radius:12px;padding:1.8rem;}
+        .tab-btns {display:flex;gap:1rem;margin-bottom:1.6rem;}
+        .tab-btn {padding:10px 32px;border-radius:22px;border:none;background:var(--accent);color:var(--primary);font-family:'Poppins';font-weight:600;cursor:pointer;font-size:1rem;transition:all .2s;}
+        .tab-btn.active {background:var(--primary);color:#fff;}
+        .tab-content {display:none;}
+        .tab-content.active {display:block;animation:fadeIn .5s;}
+        @keyframes fadeIn {from {opacity:0;transform:translateY(20px);} to {opacity:1;transform:translateY(0);}}
+        /* Programs grid */
+        .programs-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;}
+        .program-card {background:#fff;border-radius:14px;box-shadow:0 2px 14px rgba(47,133,90,.09);padding:2rem 1.5rem;position:relative;transition:transform .2s,box-shadow .2s;}
+        .program-card:hover {transform:translateY(-8px);box-shadow:0 10px 30px rgba(47,133,90,.14);}
+        .program-title {font-family:'Poppins';font-size:1.2rem;color:var(--primary);margin-bottom:.5rem;}
+        .program-desc {color:var(--text-secondary);font-size:.97rem;margin-bottom:1rem;}
+        .program-meta {font-size:.93rem;color:var(--accent);}
+        /* Projects grid */
+        .projects-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;}
+        .project-card {background:#fff;border-radius:14px;box-shadow:0 2px 14px rgba(38,178,172,.09);padding:1.7rem 1.3rem;transition:transform .2s,box-shadow .2s;}
+        .project-card:hover {transform:translateY(-8px);box-shadow:0 10px 30px rgba(38,178,172,.14);}
+        .project-title {font-family:'Poppins';font-size:1.14rem;color:var(--accent);}
+        .project-desc {color:var(--text-secondary);font-size:.95rem;margin:.5rem 0;}
+        .project-meta {font-size:.92rem;color:var(--primary);}
+        .project-doc {display:inline-block;background:var(--accent);color:var(--primary);font-weight:700;border-radius:20px;padding:.35rem 1.1rem;text-decoration:none;margin-top:.7rem;}
+        /* Gallery */
+        .gallery-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
+        .gallery-item {height:200px;background-size:cover;background-position:center;border-radius:10px;box-shadow:0 1px 8px rgba(47,133,90,.06);cursor:pointer;position:relative;transition:transform .2s;}
+        .gallery-item:hover {transform:scale(1.05);}
+        .gallery-caption {position:absolute;bottom:0;left:0;right:0;background:rgba(47,133,90,0.76);color:#fff;padding:10px 14px;border-radius:0 0 10px 10px;font-size:.98rem;}
+        /* Lightbox */
+        .lightbox-bg {display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.86);z-index:9999;align-items:center;justify-content:center;}
+        .lightbox-img {max-width:90vw;max-height:70vh;border-radius:14px;box-shadow:0 10px 40px rgba(47,133,90,.22);}
+        /* Team */
+        .team-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;}
+        .team-card {background:#fff;border-radius:14px;box-shadow:0 2px 8px rgba(38,178,172,.08);padding:1.5rem;}
+        .team-name {font-family:'Poppins';font-weight:600;color:var(--primary);}
+        .team-role {color:var(--accent);font-size:.98rem;}
+        .team-bio {color:var(--text-secondary);font-size:.97rem;margin-top:.5rem;}
+        /* Transparency / Compliance */
+        .transparency-block {background:#fff;border-radius:14px;box-shadow:0 1px 8px rgba(47,133,90,.10);padding:2rem;}
+        .doc-list {display:flex;gap:2rem;flex-wrap:wrap;}
+        .doc-item {width:220px;background:var(--secondary);border-radius:10px;box-shadow:0 1px 4px rgba(47,133,90,.05);text-align:center;padding:1.2rem;}
+        .doc-icon {font-size:2.3rem;color:var(--primary);}
+        .doc-title {font-weight:600;margin:.6rem 0 .8rem 0;}
+        .doc-link {display:inline-block;background:var(--accent);color:var(--primary);font-weight:700;border-radius:20px;padding:.3rem 1.2rem;text-decoration:none;margin-top:.5rem;}
+        .doc-link:after {content:'⬇';margin-left:.3rem;}
+        .doc-link.sample {opacity:.6;pointer-events:none;}
+        .doc-link.upload {background:var(--cta);color:var(--primary);font-weight:700;}
+        /* Forms */
+        .form-section {background:#fff;border-radius:14px;box-shadow:0 1px 8px rgba(38,178,172,.10);padding:2rem 2.5rem;max-width:530px;margin:0 auto;}
+        .form-section h3 {font-family:'Poppins';color:var(--primary);font-size:1.3rem;margin-bottom:1rem;}
+        .form-group {margin-bottom:1.2rem;}
+        .form-group label {font-weight:600;color:var(--primary);display:block;margin-bottom:.4rem;}
+        .form-group input, .form-group textarea, .form-group select {width:100%;padding:10px 12px;border-radius:8px;border:1.5px solid #d0d7de;font-family:inherit;font-size:1rem;}
+        .form-group input[type="submit"] {background:var(--accent);color:var(--primary);font-weight:700;cursor:pointer;border:none;}
+        /* Contact */
+        .contact-block {background:#fff;border-radius:14px;box-shadow:0 1px 8px rgba(47,133,90,.09);padding:2rem;}
+        .contact-list {font-size:1.07rem;}
+        .contact-list b {color:var(--primary);}
+        .contact-map {margin-top:1rem;}
+        /* Footer */
+        footer {background:var(--primary);color:#fff;padding:2.2rem 2vw;}
+        .footer-content {display:flex;flex-wrap:wrap;justify-content:space-between;gap:2.2rem;}
+        .footer-section {min-width:180px;}
+        .footer-title {font-family:'Poppins';font-size:1.1rem;color:var(--accent);margin-bottom:.5rem;}
+        .footer-link {color:#fff;text-decoration:none;display:block;margin-bottom:.6rem;}
+        .footer-link:hover {color:var(--cta);}
+        .footer-social {display:flex;gap:.7rem;margin-top:.8rem;}
+        .footer-social a {color:#fff;font-size:1.4rem;}
+        .footer-partners {display:flex;gap:1.2rem;margin-top:.7rem;}
+        .copyright {text-align:center;margin-top:1.5rem;color:#ddd;}
+        @media(max-width:900px) {
+            .stats,.partners-strip,.doc-list,.footer-content {flex-direction:column;}
+            .programs-grid,.projects-grid,.gallery-grid,.team-grid {grid-template-columns:1fr;}
+        }
+        /* Enhanced Modal */
+        #donateModal {display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;background:rgba(0,0,0,0.8);align-items:center;justify-content:center;}
+        #donateBox {background:#fff;border-radius:18px;max-width:400px;margin:3rem auto;padding:2rem;text-align:center;box-shadow:0 6px 24px #2F855A55;}
+        #donateBox h3 {color:var(--primary);}
+        #donateResult {margin-top:1rem;}
+    </style>
+</head>
+<body>
+    <!-- HEADER & NAV -->
+    <header>
+        <nav>
+            <div class="logo-area">
+                <img src="sweed-logo.png" alt="SWEED Trust Logo" class="logo-img" />
+                <span class="site-title">SWEED Trust</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#mission">Mission & Vision</a>
+                <a href="#programs">Programs</a>
+                <a href="#projects">Projects</a>
+                <a href="#team">Team</a>
+                <a href="#transparency">Transparency</a>
+                <a href="#get-involved">Get Involved</a>
+                <a href="#contact">Contact</a>
+                <button class="cta-btn" onclick="openDonateModal()">Donate</button>
+            </div>
+        </nav>
+        <div class="trust-banner">Trusted by NABARD, TAWDEVWA, District Administration, CSR Partners</div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Empowering Rural Lives through Sustainable Development</h1>
+            <p>SWEED Trust works across Tamil Nadu to uplift rural communities through agriculture, dairy, watershed, and livelihood programs.</p>
+            <div class="hero-btns">
+                <a href="#programs" class="cta">Our Work</a>
+                <button class="secondary" onclick="openDonateModal()">Donate Now</button>
+            </div>
+        </div>
+        <div class="stats">
+            <div class="stat-block"><div class="stat-num" data-count="25">0</div><div class="stat-label">Villages Impacted</div></div>
+            <div class="stat-block"><div class="stat-num" data-count="500">0</div><div class="stat-label">Women Empowered</div></div>
+            <div class="stat-block"><div class="stat-num" data-count="10">0</div><div class="stat-label">Projects Completed</div></div>
+            <div class="stat-block"><div class="stat-num" data-count="15">0</div><div class="stat-label">Years of Service</div></div>
+        </div>
+        <div class="partners-strip">
+            <img src="nabard-logo.png" alt="NABARD Logo" class="partner-logo" />
+            <img src="tawdevwa-logo.png" alt="TAWDEVWA Logo" class="partner-logo" />
+            <img src="district-logo.png" alt="District Admin Logo" class="partner-logo" />
+            <img src="csr-logo.png" alt="CSR Partner Logo" class="partner-logo" />
+        </div>
+    </section>
+
+    <main>
+        <!-- ABOUT US -->
+        <section id="about">
+            <h2 class="section-title">Who We Are</h2>
+            <div class="tabs">
+                <div class="tab-btns">
+                    <button class="tab-btn active" data-tab="overview">Overview</button>
+                    <button class="tab-btn" data-tab="history">Our History</button>
+                    <button class="tab-btn" data-tab="values">Core Values</button>
+                    <button class="tab-btn" data-tab="governance">Governance</button>
+                </div>
+                <div class="tab-content active" id="overview"><p>
+                    SWEED Trust (Social Work & Economic Educational Development Trust) is a rural development NGO based in Tamil Nadu. Established to empower marginalized communities through education, livelihood, and social development programs.
+                </p></div>
+                <div class="tab-content" id="history"><p>
+                    Founded in 2009 by passionate social workers led by Mr. R. Selvaraju, SWEED has implemented numerous government and CSR-supported programs focusing on self-reliance and local capacity building.
+                </p></div>
+                <div class="tab-content" id="values"><ul>
+                    <li>Integrity and Transparency</li>
+                    <li>Community Empowerment</li>
+                    <li>Sustainability</li>
+                    <li>Innovation in Rural Development</li>
+                    <li>Inclusive Growth</li>
+                </ul></div>
+                <div class="tab-content" id="governance"><p>
+                    SWEED operates under a registered trust model with statutory compliance under 12A, 80G, CSR-1, and DARPAN accreditation. Governance is ensured through regular board meetings and transparent financial reporting.
+                </p></div>
+            </div>
+        </section>
+
+        <!-- MISSION & VISION -->
+        <section id="mission">
+            <h2 class="section-title">Mission & Vision</h2>
+            <div class="tabs">
+                <div class="tab-content active" id="mission-tab">
+                    <p><b>Mission:</b> To foster socio-economic and educational empowerment of rural communities through participatory and sustainable development initiatives.</p>
+                    <p><b>Vision:</b> A self-reliant, equitable, and sustainable rural society where every individual has the opportunity to live with dignity.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROGRAMS GRID -->
+        <section id="programs">
+            <h2 class="section-title">Our Programs</h2>
+            <p>Our thematic programs are designed to address the core needs of rural communities — from agriculture to entrepreneurship.</p>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-title">Agriculture & Dairy Development</div>
+                    <div class="program-desc">Supporting small and marginal farmers with dairy-based FPOs, modern farming techniques, and NABARD-linked programs.</div>
+                    <div class="program-meta">Category: Agriculture & Dairy</div>
+                </div>
+                <div class="program-card">
+                    <div class="program-title">Watershed Management</div>
+                    <div class="program-desc">Implementing integrated watershed development projects that restore soil fertility and promote sustainable farming.</div>
+                    <div class="program-meta">Category: Watershed</div>
+                </div>
+                <div class="program-card">
+                    <div class="program-title">Women Empowerment</div>
+                    <div class="program-desc">Facilitating SHG formation, microenterprise training, and financial inclusion for women-led households.</div>
+                    <div class="program-meta">Category: SHG / Women</div>
+                </div>
+                <div class="program-card">
+                    <div class="program-title">Skill Development & Livelihoods</div>
+                    <div class="program-desc">Training rural youth and women in technical and entrepreneurial skills for sustainable income generation.</div>
+                    <div class="program-meta">Category: Skill / Livelihood</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS GRID -->
+        <section id="projects">
+            <h2 class="section-title">Our Projects</h2>
+            <p>A glimpse into our flagship and ongoing projects.</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-title">NABARD Watershed Development Project</div>
+                    <div class="project-meta">2024–2026 | Sankarapuram Block</div>
+                    <div class="project-desc">A holistic watershed initiative improving soil health, water retention, and livelihood resilience for 5 villages.</div>
+                    <a href="#" class="project-doc sample" download>Sample Report</a>
+                    <a href="#" class="project-doc upload" onclick="showUpload('NABARD Watershed Development Project')">Upload Document</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">Dairy FPO Formation Program</div>
+                    <div class="project-meta">2025–ongoing | Kallakurichi District</div>
+                    <div class="project-desc">Formation of a dairy-based Farmer Producer Organization (FPO) to enhance income and market access for dairy farmers.</div>
+                    <a href="#" class="project-doc upload" onclick="showUpload('Dairy FPO Formation Program')">Upload Document</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">SHG and Livelihood Promotion Program</div>
+                    <div class="project-meta">2019–present</div>
+                    <div class="project-desc">Organizing and strengthening women SHGs for microenterprise and rural credit linkages.</div>
+                    <a href="#" class="project-doc upload" onclick="showUpload('SHG and Livelihood Promotion Program')">Upload Document</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section id="gallery">
+            <h2 class="section-title">Impact Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image:url('images/field1.jpg')" onclick="openLightbox('images/field1.jpg','Watershed Project Site')">
+                    <div class="gallery-caption">Watershed Project Site</div>
+                </div>
+                <div class="gallery-item" style="background-image:url('images/shg1.jpg')" onclick="openLightbox('images/shg1.jpg','SHG Meeting')">
+                    <div class="gallery-caption">SHG Meeting</div>
+                </div>
+                <div class="gallery-item" style="background-image:url('images/training1.jpg')" onclick="openLightbox('images/training1.jpg','Youth Skill Training')">
+                    <div class="gallery-caption">Youth Skill Training</div>
+                </div>
+                <div class="gallery-item" style="background-image:url('images/dairy1.jpg')" onclick="openLightbox('images/dairy1.jpg','Dairy FPO Launch')">
+                    <div class="gallery-caption">Dairy FPO Launch</div>
+                </div>
+            </div>
+            <div class="lightbox-bg" id="lightbox-bg" onclick="closeLightbox()">
+                <img id="lightbox-img" class="lightbox-img" src="" alt="">
+                <div id="lightbox-caption" style="color:#fff;text-align:center;margin-top:10px;font-size:1.1rem;"></div>
+            </div>
+        </section>
+
+        <!-- TEAM -->
+        <section id="team">
+            <h2 class="section-title">Our Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-name">Mr. R. Selvaraju</div>
+                    <div class="team-role">Managing Trustee</div>
+                    <div class="team-bio">Founder and visionary behind SWEED Trust, with over two decades of experience in community-based development and social work.</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-name">Mr. Bhuvanesh R</div>
+                    <div class="team-role">General Consultant</div>
+                    <div class="team-bio">Strategic consultant guiding SWEED’s institutional development, FPO initiatives, and digital transformation efforts.</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-name">TBA</div>
+                    <div class="team-role">Technical Advisor - Dairy Projects</div>
+                    <div class="team-bio">Expert guidance on dairy-based FPOs and rural entrepreneurship.</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-name">TBA</div>
+                    <div class="team-role">Legal & Governance Advisor</div>
+                    <div class="team-bio">Oversight on compliance, governance, and legal frameworks.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRANSPARENCY / COMPLIANCE -->
+        <section id="transparency">
+            <h2 class="section-title">Compliance & Transparency</h2>
+            <div class="transparency-block">
+                <div class="doc-list">
+                    <div class="doc-item">
+                        <div class="doc-icon">📄</div>
+                        <div class="doc-title">12A Certificate</div>
+                        <a href="#" class="doc-link sample" download>Sample Document</a>
+                        <a href="#" class="doc-link upload" onclick="showUpload('12A Certificate')">Upload Document</a>
+                    </div>
+                    <div class="doc-item">
+                        <div class="doc-icon">📄</div>
+                        <div class="doc-title">80G Certificate</div>
+                        <a href="#" class="doc-link sample" download>Sample Document</a>
+                        <a href="#" class="doc-link upload" onclick="showUpload('80G Certificate')">Upload Document</a>
+                    </div>
+                    <div class="doc-item">
+                        <div class="doc-icon">📄</div>
+                        <div class="doc-title">CSR-1 Certificate</div>
+                        <a href="#" class="doc-link sample" download>Sample Document</a>
+                        <a href="#" class="doc-link upload" onclick="showUpload('CSR-1 Certificate')">Upload Document</a>
+                    </div>
+                    <div class="doc-item">
+                        <div class="doc-icon">📄</div>
+                        <div class="doc-title">NGO Darpan Registration</div>
+                        <a href="#" class="doc-link sample" download>Sample Document</a>
+                        <a href="#" class="doc-link upload" onclick="showUpload('NGO Darpan Registration')">Upload Document</a>
+                    </div>
+                    <div class="doc-item">
+                        <div class="doc-icon">📄</div>
+                        <div class="doc-title">Annual Report PDF</div>
+                        <a href="#" class="doc-link sample" download>Sample Report</a>
+                        <a href="#" class="doc-link upload" onclick="showUpload('Annual Report PDF')">Upload Document</a>
+                    </div>
+                </div>
+                <p style="margin-top:2rem; color:#555; text-align:center;">Actual documents and reports will be uploaded by the SWEED team soon.<br>For compliance queries, <a href="#contact" style="color:var(--accent);font-weight:600;">contact us</a>.</p>
+            </div>
+        </section>
+
+        <!-- GET INVOLVED / FORMS -->
+        <section id="get-involved">
+            <h2 class="section-title">Get Involved</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-title">Volunteer With Us</div>
+                    <div class="program-desc">Join our grassroots efforts in agriculture, training, and women empowerment programs.</div>
+                    <a href="#volunteer-form" class="project-doc">Join Now</a>
+                </div>
+                <div class="program-card">
+                    <div class="program-title">Partner or Sponsor</div>
+                    <div class="program-desc">Collaborate with SWEED in implementing sustainable development projects or CSR partnerships.</div>
+                    <a href="#partner-form" class="project-doc">Partner With SWEED</a>
+                </div>
+                <div class="program-card">
+                    <div class="program-title">Donate</div>
+                    <div class="program-desc">Support our ongoing programs. Every contribution strengthens rural livelihoods.</div>
+                    <a href="#donate-form" class="project-doc" onclick="openDonateModal()">Donate Securely</a>
+                </div>
+            </div>
+            <!-- Forms unchanged -->
+            <div id="volunteer-form" class="form-section" style="margin-top:2.5rem;">
+                <h3>Volunteer Registration</h3>
+                <form>
+                    <div class="form-group"><label>Name</label><input type="text" required></div>
+                    <div class="form-group"><label>Age</label><input type="number" required></div>
+                    <div class="form-group"><label>Skills</label><input type="text"></div>
+                    <div class="form-group"><label>Availability</label><input type="text"></div>
+                    <div class="form-group"><label>Message</label><textarea></textarea></div>
+                    <div class="form-group"><input type="submit" value="Submit"></div>
+                </form>
+            </div>
+            <div id="partner-form" class="form-section" style="margin-top:2.5rem;">
+                <h3>Partnership Inquiry</h3>
+                <form>
+                    <div class="form-group"><label>Organization</label><input type="text" required></div>
+                    <div class="form-group"><label>Representative Name</label><input type="text"></div>
+                    <div class="form-group"><label>Email</label><input type="email" required></div>
+                    <div class="form-group"><label>Project Interest</label><input type="text"></div>
+                    <div class="form-group"><label>Message</label><textarea></textarea></div>
+                    <div class="form-group"><input type="submit" value="Submit"></div>
+                </form>
+            </div>
+            <div id="donate-form" class="form-section" style="margin-top:2.5rem;">
+                <h3>Donate to SWEED Trust</h3>
+                <form>
+                    <div class="form-group"><label>Name</label><input type="text" required></div>
+                    <div class="form-group"><label>Email</label><input type="email" required></div>
+                    <div class="form-group"><label>Amount</label><input type="number" required></div>
+                    <div class="form-group"><label>Message</label><textarea></textarea></div>
+                    <div class="form-group"><input type="submit" value="Proceed to Payment"></div>
+                </form>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-block">
+                <div class="contact-list">
+                    <div><b>Email:</b> sweedtrustofficial@gmail.com</div>
+                    <div><b>Phone:</b> +91-9171771650</div>
+                    <div><b>WhatsApp:</b> +91-9944920673</div>
+                    <div><b>Address:</b> SWEED Trust, Sankarapuram, Kallakurichi District, Tamil Nadu, India - 606401</div>
+                </div>
+                <div class="contact-map">
+                    <iframe src="https://maps.google.com/?q=SWEED+Trust+Sankarapuram&output=embed" width="100%" height="230" style="border:0;border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- DONATE MODAL -->
+    <div id="donateModal">
+      <div id="donateBox">
+        <h3>Donate to SWEED Trust</h3>
+        <form id="donateForm">
+          <input type="text" placeholder="Your Name" required style="width:90%;margin-bottom:1rem;"><br>
+          <input type="email" placeholder="Your Email" required style="width:90%;margin-bottom:1rem;"><br>
+          <input type="number" placeholder="Amount (INR)" required style="width:90%;margin-bottom:1rem;"><br>
+          <select style="width:90%;margin-bottom:1rem;">
+              <option value="">Purpose (optional)</option>
+              <option>Dairy</option>
+              <option>Watershed</option>
+              <option>Women Empowerment</option>
+              <option>Skill Program</option>
+          </select><br>
+          <button type="submit" style="background:var(--accent);color:var(--primary);padding:10px 32px;border:none;border-radius:22px;font-weight:600;">Proceed to Payment</button>
+        </form>
+        <button onclick="closeDonateModal()" style="margin-top:1rem;background:transparent;color:var(--primary);font-size:1.2rem;border:none;">Close</button>
+        <div id="donateResult"></div>
+      </div>
+    </div>
+
+    <!-- UPLOAD MODAL (for documents) -->
+    <div id="uploadModal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:10000;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
+      <div style="background:#fff;border-radius:16px;max-width:420px;margin:3rem auto;padding:2rem;text-align:center;box-shadow:0 8px 32px #2F855A44;">
+        <h3 id="uploadTitle" style="color:var(--primary);"></h3>
+        <p>Upload a document or report (.pdf, .docx, .jpg):</p>
+        <input type="file" style="margin-bottom:1rem;" accept=".pdf,.docx,.jpg,.jpeg,.png">
+        <br>
+        <button onclick="closeUploadModal()" style="background:var(--accent);color:var(--primary);padding:8px 24px;border:none;border-radius:18px;font-weight:600;">Close</button>
+        <div id="uploadResult" style="margin-top:1rem;color:var(--success);"></div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-title">Contact</div>
+                <div>Email: sweedtrustofficial@gmail.com<br>
+                Phone/WhatsApp: +91-9944920673 / 9171771650<br>
+                Address: Kallakurichi - 606202</div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">🔵</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="footer-title">Partners</div>
+                <div class="footer-partners">
+                    <img src="nabard-logo.png" alt="NABARD Logo" class="partner-logo" />
+                    <img src="tawdevwa-logo.png" alt="TAWDEVWA Logo" class="partner-logo" />
+                    <img src="district-logo.png" alt="District Admin Logo" class="partner-logo" />
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="footer-title">Quick Links</div>
+                <a href="#home" class="footer-link">Home</a>
+                <a href="#about" class="footer-link">About Us</a>
+                <a href="#mission" class="footer-link">Mission & Vision</a>
+                <a href="#programs" class="footer-link">Programs</a>
+                <a href="#projects" class="footer-link">Projects</a>
+                <a href="#team" class="footer-link">Team</a>
+                <a href="#transparency" class="footer-link">Transparency</a>
+                <a href="#get-involved" class="footer-link">Get Involved</a>
+                <a href="#contact" class="footer-link">Contact</a>
+            </div>
+            <div class="footer-section">
+                <div class="footer-title">Legal</div>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Use</a>
+                <a href="#" class="footer-link">CSR Partnerships</a>
+            </div>
+        </div>
+        <div class="copyright">© SWEED Trust 2025. All rights reserved.</div>
+    </footer>
+    <script>
+        // Animated Stats
+        document.querySelectorAll('.stat-num').forEach(function(el){
+            let c = 0, max = parseInt(el.dataset.count), speed = 60;
+            let update = () => {
+                c += Math.ceil(max/30);
+                if (c > max) c = max;
+                el.textContent = c+"+";
+                if (c < max) setTimeout(update, speed);
+            };
+            update();
+        });
+        // Tabs
+        document.querySelectorAll('.tab-btn').forEach(function(btn){
+            btn.onclick = function(){
+                let tabs = btn.parentNode.parentNode;
+                tabs.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+                tabs.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+                btn.classList.add('active');
+                tabs.querySelector('#'+btn.dataset.tab).classList.add('active');
+            }
+        });
+        // Lightbox Gallery
+        window.openLightbox = function(src, caption){
+            document.getElementById('lightbox-bg').style.display='flex';
+            document.getElementById('lightbox-img').src=src;
+            document.getElementById('lightbox-caption').textContent=caption;
+        }
+        window.closeLightbox = function(){
+            document.getElementById('lightbox-bg').style.display='none';
+        }
+        // Donate Modal
+        function openDonateModal() { document.getElementById('donateModal').style.display='flex'; }
+        function closeDonateModal() { document.getElementById('donateModal').style.display='none'; document.getElementById('donateResult').textContent = ''; }
+        document.getElementById('donateForm').onsubmit = function(e){
+          e.preventDefault();
+          document.getElementById('donateResult').innerHTML = "<span style='color:var(--primary);font-weight:600;'>Thank you for supporting SWEED Trust! (Demo only – payment integration coming soon)</span>";
+        }
+        // Document Upload Modal
+        function showUpload(title){
+            document.getElementById('uploadTitle').textContent = title;
+            document.getElementById('uploadModal').style.display = 'flex';
+            document.getElementById('uploadResult').textContent = '';
+        }
+        function closeUploadModal(){
+            document.getElementById('uploadModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
